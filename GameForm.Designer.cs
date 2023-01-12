@@ -1,6 +1,6 @@
 ﻿
 
-namespace TanksGame_V4
+namespace TanksGame
 {
     partial class GameForm
     {

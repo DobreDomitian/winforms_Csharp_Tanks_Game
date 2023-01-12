@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TanksGame_V4.Properties
+namespace TanksGame.Properties
 {
 
 

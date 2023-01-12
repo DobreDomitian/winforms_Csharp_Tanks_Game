@@ -7,22 +7,22 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.VisualStyles;
-using TanksGame_V4.Interface;
+using TanksGame.Interface;
 
-namespace TanksGame_V4.GameObjects
+namespace TanksGame.GameObjects
 {
     internal class ProjectileObject : BasicObject
     {
-        private Image Projectile_Image;
-        private Image Explosion_Image;
-        private Size ImageSize;
+        private Image ProjectileImage;
+        private Image ExplosionImage;
+        private Size expImageSize;
+        private Size projectileImageSize;
         public ProjectileObject(float x, float y, float width, float height) : base(x, y, height, width)
         {
-            Projectile_Image = Image.FromFile(Path.GetFullPath("GameResources/index32x32.png"));
-            Explosion_Image = Image.FromFile(Path.GetFullPath("GameResources/Explosion32x32.png"));
-            ImageSize = Projectile_Image.Size;
-            this.Width = ImageSize.Width;
-            this.Height = ImageSize.Height;
+            ProjectileImage = Image.FromFile(Path.GetFullPath("GameResources/index32x32.png"));
+            ExplosionImage = Image.FromFile(Path.GetFullPath("GameResources/Explosion32x32.png"));
+            projectileImageSize = ProjectileImage.Size;
+            expImageSize = ExplosionImage.Size;
         }
 
         public override void DrawObject(Graphics g)

@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TanksGame_V4.GameObjects;
-using TanksGame_V4;
+using TanksGame.GameObjects;
+using TanksGame;
 using System.Drawing.Imaging;
 
-namespace TanksGame_V4.Interface
+namespace TanksGame.Interface
 {
     internal class GamePanel : Panel
     {
@@ -68,7 +68,7 @@ namespace TanksGame_V4.Interface
                 }
                 g.DrawString("Moves Left for P" + (currentTankTurn+1).ToString() + " : " + moves.ToString(), font, Brushes.Red, 0f, 0f);
                 g.DrawString("Time Left for P" + (currentTankTurn+1).ToString() + " : " + (30 - (turnTimer / 20)).ToString(), font, Brushes.Purple, 0f, 30f);
-                g.DrawString("Shoot Power for P" + (currentTankTurn + 1).ToString() + " : " + tankObject[currentTankTurn].Shot_power.ToString(), font, Brushes.DarkRed, 0f, 60f);
+                g.DrawString("Shoot Power for P" + (currentTankTurn + 1).ToString() + " : " + tankObject[currentTankTurn].shotPower.ToString(), font, Brushes.DarkRed, 0f, 60f);
             }
             catch (Exception e)
             {
@@ -110,29 +110,29 @@ namespace TanksGame_V4.Interface
                     }
                 case (Keys.Left):
                     {
-                        if (tankObject[currentTankTurn].Turret_angle < 180)
-                            tankObject[currentTankTurn].Turret_angle += 1;
+                        if (tankObject[currentTankTurn].turretAngle < 180)
+                            tankObject[currentTankTurn].turretAngle += 1;
                         this.Invalidate();
                         break;
                     }
                 case(Keys.Right):
                     {
-                        if(tankObject[currentTankTurn].Turret_angle >0)
-                            tankObject[currentTankTurn].Turret_angle += -1;
+                        if(tankObject[currentTankTurn].turretAngle >0)
+                            tankObject[currentTankTurn].turretAngle += -1;
                         this.Invalidate();
                         break;
                     }
                 case (Keys.Up):
                     {
-                        if (tankObject[currentTankTurn].Shot_power < 100)
-                            tankObject[currentTankTurn].Shot_power += 1;
+                        if (tankObject[currentTankTurn].shotPower < 100)
+                            tankObject[currentTankTurn].shotPower += 1;
                         this.Invalidate();
                         break;
                     }
                 case (Keys.Down):
                     {
-                        if (tankObject[currentTankTurn].Shot_power > 1)
-                            tankObject[currentTankTurn].Shot_power += -1;
+                        if (tankObject[currentTankTurn].shotPower > 1)
+                            tankObject[currentTankTurn].shotPower += -1;
                         this.Invalidate();
                         break;
                     }

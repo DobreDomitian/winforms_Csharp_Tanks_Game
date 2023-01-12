@@ -8,9 +8,9 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using TanksGame_V4.Interface;
+using TanksGame.Interface;
 
-namespace TanksGame_V4.GameServer
+namespace TanksGame.GameServer
 {
     internal class Host
     {
@@ -19,7 +19,6 @@ namespace TanksGame_V4.GameServer
         public String _gameData { get; set; }
         private Thread _t;
         private bool communicating;
-        private NetworkStream _stream;
         //private StreamReader[] _streamrw;
         //private StreamWriter[] _streamwr;
         private StreamReader _streamReader;

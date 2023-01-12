@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TanksGame_V4
+namespace TanksGame
 {
     internal static class Program
     {

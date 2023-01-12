@@ -6,11 +6,11 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TanksGame_V4.GameObjects;
-using TanksGame_V4;
-using TanksGame_V4.GameServer;
+using TanksGame.GameObjects;
+using TanksGame;
+using TanksGame.GameServer;
 
-namespace TanksGame_V4.Interface
+namespace TanksGame.Interface
 {
 
     internal class GameRender
@@ -41,13 +41,14 @@ namespace TanksGame_V4.Interface
             gamePanel.StartGame(this.CreateTerrain(seed, coef,amp), this.CreateTanks(playerNumber), playerNumber, PixelMatrix);
             
         }
-        public GameRender(GameForm gameForm, int playerNumber, short[,] pixelMatrix, Client _client)
+        public GameRender(GameForm gameForm, int playerNumber, Client _client)
         {
             this.gameForm = gameForm;
             GamePanel gamePanel = new GamePanel(gameForm);
             gameForm.Controls.Add(gamePanel);
-            PixelMatrix = new short[gameForm.ClientSize.Width, gameForm.ClientSize.Height];
-            gamePanel.StartGame(this.CreateTerrain(), this.CreateTanks(playerNumber), playerNumber, PixelMatrix);
+            this.PixelMatrix = new short[gameForm.ClientSize.Width, gameForm.ClientSize.Height];
+            
+            gamePanel.StartGame(this.CreateTerrain(), this.CreateTanks(playerNumber), playerNumber, this.PixelMatrix);
         }
 
         private TerrainObject CreateTerrain()

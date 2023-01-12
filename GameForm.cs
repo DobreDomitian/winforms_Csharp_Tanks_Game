@@ -9,10 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TanksGame_V4.GameObjects;
-using TanksGame_V4.Interface;
+using TanksGame.GameObjects;
+using TanksGame.Interface;
 
-namespace TanksGame_V4
+namespace TanksGame
 {
     public partial class GameForm : Form
     {

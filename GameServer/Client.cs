@@ -8,16 +8,14 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace TanksGame_V4.GameServer
+namespace TanksGame.GameServer
 {
     internal class Client
     {
-        private TcpListener _client;
         private TcpClient communicator;
         public String _gameData { get; set; }
         private Thread _t;
         private bool communicating;
-        private NetworkStream _stream;
         //private StreamReader[] _streamrw;
         //private StreamWriter[] _streamwr;
         private StreamReader _streamReader;
