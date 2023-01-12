@@ -37,7 +37,7 @@ namespace TanksGame_V4.Interface
             if (coef > 1.5)
                 coef = 1.5;
             var amp = random.Next((int)80 * 10, (int)80 * 1000);
-            _host._gameData = seed.ToString() + " " + coef.ToString() + amp
+           // _host._gameData = seed.ToString() + " " + coef.ToString() + amp;
             gamePanel.StartGame(this.CreateTerrain(seed, coef,amp), this.CreateTanks(playerNumber), playerNumber, PixelMatrix);
             
         }

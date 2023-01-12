@@ -14,7 +14,7 @@ namespace TanksGame_V4.GameServer
 {
     internal class Host
     {
-        private TcpListener _host ;
+        private TcpListener _listener ;
         private TcpClient communicator;
         public String _gameData { get; set; }
         private Thread _t;
@@ -31,8 +31,8 @@ namespace TanksGame_V4.GameServer
         private bool start;
         public Host(int _portNr, int _playerNr)
         {
-            _host = TcpListener.Create(_portNr);
-            _host.Start();
+            _listener = TcpListener.Create(_portNr);
+            _listener.Start();
             //communicator = new TcpClient[_playerNr];
             //_streamrw = new StreamReader[_playerNr];
             //_streamwr = new StreamWriter[_playerNr];
@@ -43,10 +43,11 @@ namespace TanksGame_V4.GameServer
             read = false;
             connections = 1;
             playerNumber = _playerNr;
-            communicator = _host.AcceptTcpClient();
+            communicator = _listener.AcceptTcpClient();
             _streamReader = new StreamReader(communicator.GetStream());
             _streamWriter = new StreamWriter(communicator.GetStream());
             _t.Start();
+            _listener.Stop();
         }
 
         private void Receive_Send()
